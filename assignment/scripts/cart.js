@@ -91,19 +91,21 @@ console.log(basket);
 function removeItem(item) {
     basket.indexOf(item);
     console.log(basket.indexOf(item));
-    //works up to here 
+    let response = ``; 
+    if (basket.indexOf(item) === -1) {
+        response = `null`;
+    }
+    else {
+        response = item;
+    }
     console.log(basket.splice(basket.indexOf(item), 1));
-    //i don't know how to get it to return null.  the below doesn't work.
-    if (basket.indexOf(item) >= 0) {
-        return item;
-    }
-    else if (basket.indexOf(item) === -1) {
-        return null
-    }
+    return response;
 }
 
-console.log(removeItem(`mustard`));
 console.log(removeItem(`mints`));
+console.log(basket);
+console.log(removeItem(`turkey`));
+console.log(basket);
 
 // DO NOT MODIFY
 // Used for automated testing
